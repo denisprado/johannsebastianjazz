@@ -40,7 +40,8 @@ module.exports = {
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: "async"
     }),
-    new CopyWebpackPlugin([
+    new CopyWebpackPlugin({
+      patterns: [
       {
         from: "src/img",
         to: "img"
@@ -53,7 +54,7 @@ module.exports = {
         from: "src/php",
         to: "php"
       }
-    ]),
+    ]}),
     new BundleAnalyzerPlugin(),
     new CompressionPlugin({
       asset: "[path].gz[query]",
