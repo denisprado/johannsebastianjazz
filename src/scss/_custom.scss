@@ -1,0 +1,103 @@
+$font-family-sans-serif: "proxima-nova",
+sans-serif;
+$font-family-serif: "ff-meta-serif-web-pro",
+"Source Serif Pro",
+serif;
+$font-family-monospace: Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace;
+$font-family-base: $font-family-sans-serif;
+$font-weight-light: 100;
+$font-weight-normal: 100;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+// Start with assigning color names to specific hex values.
+$white: #fff;
+$black: #000;
+$red: #EB3430;
+$orange: #d7805a;
+$yellow: #e0985a;
+$green: #47b04e;
+$blue: #446195;
+$teal: #378387;
+$pink: #b44885;
+$purple: #764196;
+// Create grayscale
+$gray-dark: #888;
+$gray: #222;
+$gray-light: lighten($gray, 25%);
+$gray-lighter: lighten($gray, 50%);
+$gray-lightest: lighten($gray, 75%);
+$primary: $red;
+$secondary: $gray-light;
+$success: $green;
+$info: $teal;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-lightest;
+$dark: $black;
+// Create grayscale
+// Reassign color vars to semantic color scheme
+$brand-primary: $blue;
+$brand-success: $green;
+$brand-info: $teal;
+$brand-warning: $orange;
+$brand-danger: $red;
+$brand-inverse: $gray-dark;
+$font-size: 0.625rem;
+$font-base-color: $gray-lighter;
+$body-bg: rgb(0, 0, 0);
+//table
+$table-cell-padding: 2rem;
+$table-cell-padding-sm: 0.3rem;
+$table-border-color: $gray-light;
+$table-head-bg: $gray-light;
+$table-head-color: $gray-light;
+$table-dark-bg: rgba($gray-dark, 0.5);
+$table-dark-accent-bg: rgba($white, 0.05);
+$table-dark-bg: rgba($gray-dark, 0.8);
+$table-dark-border-color: lighten($gray-light, 7.5%);
+$table-dark-color: $body-bg;
+$table-caption-color: $white;
+// form
+$input-bg: rgba($gray-dark, 0.05);
+$input-disabled-bg: $gray-dark;
+$input-color: $gray-lightest;
+$input-border-color: $gray-light;
+$input-focus-bg: rgba($gray-dark, 0.1);
+$input-focus-color: $gray-lightest;
+$input-focus-border-color: lighten($input-border-color, 25%);
+$input-placeholder-color: $gray-lighter;
+$input-plaintext-color: $gray-lighter;
+
+$list-group-active-bg : transparent;
+$component-active-color: transparent;
+$list-group-action-active-bg:$gray-light;
+$list-group-active-color:$gray-light;
+
+.active{
+    background: darken($gray-light,15%);
+}
+/* List group
+$list-group-bg : $white !default;
+$list-group-border-color : rgba($black, .125) !default;
+$list-group-border-width : $border-width !default;
+$list-group-border-radius : $border-radius !default;
+$list-group-item-padding-y : .75rem !default;
+$list-group-item-padding-x : 1.25rem !default;
+$list-group-hover-bg : $gray-100 !default;
+$list-group-active-color : $component-active-color !default;
+$list-group-active-bg : $component-active-bg !default;
+$list-group-active-border-color : $list-group-active-bg !default;
+$list-group-disabled-color : $gray-600 !default;
+$list-group-disabled-bg : $list-group-bg !default;
+$list-group-action-color : $gray-700 !default;
+$list-group-action-hover-color : $list-group-action-color !default;
+$list-group-action-active-color : $body-color !default;
+$list-group-action-active-bg : $gray-200 !default;*/

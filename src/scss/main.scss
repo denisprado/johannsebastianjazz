@@ -1,0 +1,320 @@
+@import "custom";
+@import "base";
+@import "~bootstrap/scss/bootstrap";
+@import "typography";
+@import "abstract";
+@import "utilities";
+@import "components";
+@import "animations";
+
+section {
+  max-width: 90vmax;
+  padding-top: 11rem;
+  .container {
+    min-height: 90vmin;
+  }
+  @media (max-width: 768px) {
+    padding-top: 15rem;
+    .container {
+      min-height: 50vmin;
+    }
+  }
+}
+
+#navbar {
+  background-color: rgba($black, 0.55);
+  z-index: 999;
+  position: fixed;
+  top: -90rem;
+  width: 100%;
+  transition: top 0.5s;
+  li {
+    margin: 1.5rem 0.75rem;
+    padding: 1rem 0 0 0;
+    @media (max-width: 768px) {
+      margin: 0rem 0rem;
+      padding: 0 0 0 0;
+    }
+  }
+  &__wires {
+    margin-right: 4rem;
+    li {
+      margin: 0rem 0rem;
+      padding: 0 0 0 0;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  &::before {
+    margin-top: 0vh;
+    position: absolute;
+    content: "";
+    display: flex;
+    align-items: center;
+    position: relative;
+    animation: fade 2s ease-out forwards;
+    background-color: $body-bg;
+    background-image: url("../img/jumbotron_bg-50.jpg");
+    background-size: contain;
+    background-attachment: scroll;
+    min-height: 100vh;
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    @media (min-width: 768px) {
+      background-attachment: scroll;
+      min-height: 131vh;
+      background-position-y: center;
+      background-position-x: center;
+    }
+    @media (min-width: 1140px) {
+      background-size: cover;
+    }
+  }
+  &__textbox {
+    margin-top: 15vh;
+    @media (min-width: 768px) {
+      margin-top: 0vh;
+    }
+    top: 15%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+}
+#about {
+  &__alexis {
+    &.about__biografias {
+      grid-area: AlexisBio;
+      @extend %biografia;
+    }
+  }
+  &__salvador {
+    &.about__biografias {
+      grid-area: SalvadorBio;
+      @extend %biografia;
+    }
+  }
+  %bio-grid {
+    @include media-breakpoint-up(xs) {
+      grid-template-areas: "infos" "text";
+      grid-template-columns: auto;
+    }
+    @include media-breakpoint-up(sm) {
+      grid-template-areas: "infos text text";
+      grid-template-columns: 260px auto auto;
+    }
+    @include media-breakpoint-up(md) {
+      grid-template-areas: "infos text" "text text";
+      grid-template-columns: 260px auto;
+    }
+    @include media-breakpoint-up(lg) {
+      grid-template-areas: "infos text text text";
+      grid-template-columns: 260px repeat(3, 1fr);
+    }
+    @include media-breakpoint-up(xl) {
+      grid-template-areas: "infos text text text";
+      grid-template-columns: 260px repeat(3, 1fr);
+    }
+  }
+  %biografia {
+    @extend %bio-grid;
+    display: grid;
+    .about__biografias {
+      &__infos {
+        grid-area: infos;
+        @media (max-width: 768px) {
+          padding-right: var(--font-size-normal);
+        }
+        &__links {
+          padding-top: var(--font-size-double);
+          text-align: center;
+        }
+      }
+      &__bio {
+        grid-area: text;
+        @media (min-width: 768px) {
+          margin-left: var(--font-size-double);
+        }
+      }
+    }
+  }
+  min-height: 80vh;
+  margin-bottom: 11rem;
+  .about {
+    display: grid;
+    grid-template-areas: "title title title title" "text text text text"
+      "image image image image"
+      "SalvadorBio SalvadorBio SalvadorBio SalvadorBio"
+      "AlexisBio AlexisBio AlexisBio AlexisBio";
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    min-height: 0vh;
+    @media (max-width: 768px) {
+      margin-top: 5rem;
+    }
+    > div {
+      padding: var(--font-size-triple) 0;
+    }
+    &__title {
+      grid-area: title;
+    }
+    &__text {
+      grid-area: text;
+      column-count: 1;
+      column-gap: 3.1rem;
+      @media (min-width: 768px) {
+        column-count: 1;
+        margin: 0 1rem;
+      }
+      @media (min-width: 1040px) {
+        margin: 0 18rem;
+        column-count: 1;
+        
+      }
+    }
+    &__img {
+      margin: var(--font-size-triple) 0;
+      width: auto;
+      height: 150px;
+      grid-area: image;
+      background-image: url("../img/partiture_bach-50.jpg");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-position-x: center;
+      background-size: contain;
+      content: "";
+    }
+  }
+}
+#player {
+  position: relative;
+  .player_controls {
+    height: 65vh;
+  }
+}
+#player::before {
+  background-size: contain;
+  @media (max-width: 768px) {
+    background-size: contain;
+  }
+  @media (min-width: 410px) {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    background-image: url("../img/bg_audio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    background-attachment: fixed;
+  }
+}
+#photos,
+#video {
+  position: relative;
+}
+#photos::before,
+#video::before {
+  @media (min-width: 768px) {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    filter: grayscale(0.25);
+    width: 100%;
+    height: 100%;
+    opacity: 0.07;
+    background-image: url("../img/partiture_bach-50.jpg");
+    background-repeat: repeat;
+    background-size: initial;
+    background-position: left;
+  }
+}
+.photos {
+  .card-columns .card {
+    margin-bottom: 1.5rem;
+  }
+}
+#diary {
+  .table {
+    background-color: rgba(black, 0.8);
+    border-top: 0.5px solid $gray;
+  }
+  background-image: url("../img/playing_piano-50.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-attachment: fixed;
+  background-size: contain;
+  @media (max-width: 768px) {
+    td,
+    th {
+      padding: 0.75rem;
+      color: #fff;
+    }
+  }
+}
+#press {
+  position: relative;
+  img {
+    background-color: $black;
+    border: 0.125rem solid $gray-light;
+    padding: 1.6rem;
+  }
+  .row {
+    height: 80vh;
+  }
+}
+#press::before {
+  @media (max-width: 768px) {
+    background-size: contain;
+  }
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-image: url("../img/bg_press.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 768px) {
+    background-size: contain;
+  }
+  background-position: left;
+  background-attachment: fixed;
+}
+#contacto {
+  position: relative;
+}
+#contacto::before {
+  background: url("../img/playing_footer_bg-50.jpg");
+  background-size: cover;
+  @media (max-width: 768px) {
+    background-size: contain;
+  }
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  content: "";
+  width: 100vmax;
+  height: 100vmax;
+  opacity: 0.25;
+}

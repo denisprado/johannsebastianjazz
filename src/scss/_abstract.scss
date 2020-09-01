@@ -1,0 +1,16 @@
+:root {
+    --font-size-half: 0.8rem;
+    --font-size-normal: 1.6rem;
+    --font-size-double: 3.2rem;
+    --font-size-triple: 4.8rem;
+    --line-height: 2.5rem;
+}
+
+%capital {
+    &.capital:first-letter {
+        font-size: var(--font-size-triple);
+        float: left;
+        line-height: var(--font-size-triple);
+        padding: 0rem var(--font-size-half) 0 0rem;
+    }
+}

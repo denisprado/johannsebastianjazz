@@ -1,0 +1,23 @@
+@keyframes arrow {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        transform: translateY(10rem);
+    }
+    100% {
+        transform: none;
+    }
+}
