@@ -1,4 +1,4 @@
-$font-family-sans-serif: "proxima-nova",
+$font-family-sans-serif:  proxima-nova, sans-serif,
 sans-serif;
 $font-family-serif: "ff-meta-serif-web-pro",
 "Source Serif Pro",
@@ -10,8 +10,8 @@ Consolas,
 "Courier New",
 monospace;
 $font-family-base: $font-family-sans-serif;
-$font-weight-light: 100;
-$font-weight-normal: 100;
+$font-weight-light: 400;
+$font-weight-normal: 400;
 $font-weight-bold: 700;
 $font-weight-base: $font-weight-normal;
 // Colors
@@ -31,9 +31,9 @@ $purple: #764196;
 // Create grayscale
 $gray-dark: #888;
 $gray: #222;
-$gray-light: lighten($gray, 25%);
-$gray-lighter: lighten($gray, 50%);
-$gray-lightest: lighten($gray, 75%);
+$gray-light: lighten($gray, 45%);
+$gray-lighter: lighten($gray, 65%);
+$gray-lightest: lighten($gray, 85%);
 $primary: $red;
 $secondary: $gray-light;
 $success: $green;
@@ -51,7 +51,7 @@ $brand-warning: $orange;
 $brand-danger: $red;
 $brand-inverse: $gray-dark;
 $font-size: 0.625rem;
-$font-base-color: $gray-lighter;
+$font-base-color: $gray-lightest;
 $body-bg: rgb(0, 0, 0);
 //table
 $table-cell-padding: 2rem;

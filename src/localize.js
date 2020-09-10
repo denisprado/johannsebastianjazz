@@ -22,7 +22,7 @@ i18next.init(
     resources: {
       en: {
         translation: {
-          player: "audio",
+          player: "House of Mirrors",
           video: "video",
           press: "press",
           photos: "galery",
@@ -41,7 +41,7 @@ i18next.init(
       },
       es: {
         translation: {
-          player: "audio",
+          player: "House of Mirrors",
           video: "video",
           press: "prensa",
           photos: "galeria",
